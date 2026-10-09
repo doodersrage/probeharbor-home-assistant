@@ -1,4 +1,4 @@
-"""The ThermalTrace integration."""
+"""The ProbeHarbor integration."""
 
 from __future__ import annotations
 
@@ -133,5 +133,5 @@ def _client_for_call(hass: HomeAssistant, call: ServiceCall) -> ThermalTraceClie
     if len(domain_data) == 1:
         return next(iter(domain_data.values()))["client"]
     raise ThermalTraceApiError(
-        "Multiple ThermalTrace config entries — pass config_entry in service data"
+        "Multiple ProbeHarbor config entries — pass config_entry in service data"
     )

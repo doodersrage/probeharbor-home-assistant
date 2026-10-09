@@ -1,4 +1,4 @@
-"""Tests for ThermalTrace signing helper."""
+"""Tests for ProbeHarbor signing helper."""
 
 from __future__ import annotations
 

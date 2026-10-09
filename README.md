@@ -1,17 +1,17 @@
-# ThermalTrace Home Assistant (HACS)
+# ProbeHarbor Home Assistant (HACS)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
-[![Validate](https://github.com/doodersrage/thermaltrace-home-assistant/actions/workflows/validate.yaml/badge.svg)](https://github.com/doodersrage/thermaltrace-home-assistant/actions/workflows/validate.yaml)
+[![Validate](https://github.com/doodersrage/probeharbor-home-assistant/actions/workflows/validate.yaml/badge.svg)](https://github.com/doodersrage/probeharbor-home-assistant/actions/workflows/validate.yaml)
 
-Official [Home Assistant](https://www.home-assistant.io/) custom integration for [ThermalTrace](https://thermaltrace.dev) — garage and workshop sensor monitoring with freeze alerts, history, and household sharing.
+Official [Home Assistant](https://www.home-assistant.io/) custom integration for [ProbeHarbor](https://probeharbor.dev) — garage and workshop sensor monitoring with freeze alerts, history, and household sharing.
 
 Install via [HACS](https://hacs.xyz/) as a **custom repository**:
 
 ```
-https://github.com/doodersrage/thermaltrace-home-assistant
+https://github.com/doodersrage/probeharbor-home-assistant
 ```
 
-**Product guide:** [thermaltrace.dev/integrations/home-assistant](https://thermaltrace.dev/integrations/home-assistant)
+**Product guide:** [probeharbor.dev/integrations/home-assistant](https://probeharbor.dev/integrations/home-assistant)
 
 **Default HACS store:** [hacs/default#10550](https://github.com/hacs/default/pull/10550) (in review — custom repository works today)
 
@@ -31,11 +31,11 @@ Category: **Integration**
 
 ## Setup
 
-1. Sign in at [thermaltrace.dev](https://thermaltrace.dev)
+1. Sign in at [probeharbor.dev](https://probeharbor.dev)
 2. **Dashboard → Share** — create a share link (Pro) with **readings** scope
-3. Copy the token from the URL: `https://thermaltrace.dev/share/YOUR_TOKEN`
-4. In Home Assistant: **Settings → Devices & services → Add integration → ThermalTrace**
-5. Paste the token; leave site URL as `https://thermaltrace.dev` unless self-hosting
+3. Copy the token from the URL: `https://probeharbor.dev/share/YOUR_TOKEN`
+4. In Home Assistant: **Settings → Devices & services → Add integration → ProbeHarbor**
+5. Paste the token; leave site URL as `https://probeharbor.dev` unless self-hosting
 
 ### Optional: inbound webhooks (Pro)
 
@@ -59,13 +59,13 @@ Copy `custom_components/thermaltrace` into your Home Assistant `config/custom_co
 
 ## Development
 
-This integration polls `GET /api/share/{token}/readings` every 5 minutes by default (configurable 60–3600 s). Push and inbound calls use the public ThermalTrace HTTP API documented at [thermaltrace.dev/openapi.yaml](https://thermaltrace.dev/openapi.yaml).
+This integration polls `GET /api/share/{token}/readings` every 5 minutes by default (configurable 60–3600 s). Push and inbound calls use the public ProbeHarbor HTTP API documented at [probeharbor.dev/openapi.yaml](https://probeharbor.dev/openapi.yaml).
 
 ## Related
 
-- Main app: [doodersrage/thermaltrace](https://github.com/doodersrage/thermaltrace)
+- Main app: [doodersrage/thermaltrace](https://github.com/doodersrage/probeharbor)
 - Manual HA recipes: [Home Assistant guide](https://doodersrage.github.io/thermaltrace/ingest/home-assistant)
 
 ## License
 
-MIT — same as ThermalTrace.
+MIT — same as ProbeHarbor.

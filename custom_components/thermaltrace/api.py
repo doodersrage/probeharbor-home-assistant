@@ -1,4 +1,4 @@
-"""ThermalTrace HTTP client."""
+"""ProbeHarbor HTTP client."""
 
 from __future__ import annotations
 
@@ -52,7 +52,7 @@ class ThermalTraceClient:
                 if response.status == 404:
                     raise ThermalTraceAuthError("Invalid or expired share token")
                 if response.status == 429:
-                    raise ThermalTraceApiError("Rate limited by ThermalTrace")
+                    raise ThermalTraceApiError("Rate limited by ProbeHarbor")
                 if response.status >= 400:
                     text = await response.text()
                     raise ThermalTraceApiError(f"HTTP {response.status}: {text[:200]}")

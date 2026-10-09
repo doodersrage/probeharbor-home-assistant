@@ -1,6 +1,6 @@
 snooze:
   name: Snooze freeze alerts
-  description: Pause ThermalTrace freeze alerts for a number of hours (requires inbound webhook).
+  description: Pause ProbeHarbor freeze alerts for a number of hours (requires inbound webhook).
   fields:
     config_entry:
       required: false
@@ -18,7 +18,7 @@ snooze:
 
 vacation:
   name: Vacation mode
-  description: Enable ThermalTrace vacation mode for a number of days (requires inbound webhook).
+  description: Enable ProbeHarbor vacation mode for a number of days (requires inbound webhook).
   fields:
     config_entry:
       required: false
@@ -36,7 +36,7 @@ vacation:
 
 clear_snooze:
   name: Clear snooze
-  description: Clear an active ThermalTrace alert snooze.
+  description: Clear an active ProbeHarbor alert snooze.
   fields:
     config_entry:
       required: false
@@ -46,7 +46,7 @@ clear_snooze:
 
 clear_vacation:
   name: Clear vacation
-  description: Clear ThermalTrace vacation mode.
+  description: Clear ProbeHarbor vacation mode.
   fields:
     config_entry:
       required: false
@@ -56,7 +56,7 @@ clear_vacation:
 
 status:
   name: Fetch status
-  description: Fetch a ThermalTrace household status snapshot (requires inbound webhook).
+  description: Fetch a ProbeHarbor household status snapshot (requires inbound webhook).
   fields:
     config_entry:
       required: false
@@ -66,7 +66,7 @@ status:
 
 push:
   name: Push readings
-  description: POST sensor readings to a ThermalTrace push device (requires ingest key).
+  description: POST sensor readings to a ProbeHarbor push device (requires ingest key).
   fields:
     config_entry:
       required: false

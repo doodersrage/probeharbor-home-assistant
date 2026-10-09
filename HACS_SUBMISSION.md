@@ -13,15 +13,15 @@ Checklist for adding `doodersrage/thermaltrace-home-assistant` to [hacs/default]
 
 ## Links for PR body
 
-- Repository: https://github.com/doodersrage/thermaltrace-home-assistant
-- Latest release: https://github.com/doodersrage/thermaltrace-home-assistant/releases/latest
-- CI actions: https://github.com/doodersrage/thermaltrace-home-assistant/actions/workflows/validate.yaml
-- Product guide: https://thermaltrace.dev/integrations/home-assistant
+- Repository: https://github.com/doodersrage/probeharbor-home-assistant
+- Latest release: https://github.com/doodersrage/probeharbor-home-assistant/releases/latest
+- CI actions: https://github.com/doodersrage/probeharbor-home-assistant/actions/workflows/validate.yaml
+- Product guide: https://probeharbor.dev/integrations/home-assistant
 
 ## Custom install (until default merge)
 
 ```
-https://github.com/doodersrage/thermaltrace-home-assistant
+https://github.com/doodersrage/probeharbor-home-assistant
 ```
 
 Category: **Integration**

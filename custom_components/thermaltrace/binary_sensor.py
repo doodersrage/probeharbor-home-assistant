@@ -1,4 +1,4 @@
-"""ThermalTrace binary sensors (doors, leaks, motion, power)."""
+"""ProbeHarbor binary sensors (doors, leaks, motion, power)."""
 
 from __future__ import annotations
 
@@ -45,7 +45,7 @@ async def async_setup_entry(
 class ThermalTraceBinarySensor(
     CoordinatorEntity[ThermalTraceCoordinator], BinarySensorEntity
 ):
-    """Binary sensor from ThermalTrace readings."""
+    """Binary sensor from ProbeHarbor readings."""
 
     _attr_has_entity_name = True
 
@@ -68,8 +68,8 @@ class ThermalTraceBinarySensor(
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id, device)},
             name=device,
-            manufacturer="ThermalTrace",
-            configuration_url=entry.data.get("base_url", "https://thermaltrace.dev"),
+            manufacturer="ProbeHarbor",
+            configuration_url=entry.data.get("base_url", "https://probeharbor.dev"),
         )
 
     @property

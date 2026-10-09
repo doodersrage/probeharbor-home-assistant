@@ -1,4 +1,4 @@
-"""Constants for the ThermalTrace integration."""
+"""Constants for the ProbeHarbor integration."""
 
 DOMAIN = "thermaltrace"
 
@@ -9,7 +9,7 @@ CONF_INBOUND_TOKEN = "inbound_token"
 CONF_INBOUND_SECRET = "inbound_secret"
 CONF_INGEST_KEY = "ingest_key"
 
-DEFAULT_BASE_URL = "https://thermaltrace.dev"
+DEFAULT_BASE_URL = "https://probeharbor.dev"
 DEFAULT_SCAN_INTERVAL = 300
 
 ATTR_DEVICE = "device"

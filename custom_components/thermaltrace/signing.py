@@ -1,4 +1,4 @@
-"""HMAC signing for ThermalTrace inbound webhooks."""
+"""HMAC signing for ProbeHarbor inbound webhooks."""
 
 from __future__ import annotations
 

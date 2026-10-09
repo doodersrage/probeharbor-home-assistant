@@ -1,4 +1,4 @@
-"""Config flow for ThermalTrace."""
+"""Config flow for ProbeHarbor."""
 
 from __future__ import annotations
 
@@ -52,7 +52,7 @@ def _clean(data: dict[str, Any]) -> dict[str, Any]:
 
 
 class ThermalTraceConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for ThermalTrace."""
+    """Handle a config flow for ProbeHarbor."""
 
     VERSION = 1
 
@@ -82,7 +82,7 @@ class ThermalTraceConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 else:
                     await self.async_set_unique_id(data[CONF_SHARE_TOKEN])
                     self._abort_if_unique_id_configured()
-                    title = payload.get("label") or "ThermalTrace"
+                    title = payload.get("label") or "ProbeHarbor"
                     return self.async_create_entry(title=title, data=data)
 
         return self.async_show_form(

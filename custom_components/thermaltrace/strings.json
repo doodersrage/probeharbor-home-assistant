@@ -2,10 +2,10 @@
   "config": {
     "step": {
       "user": {
-        "title": "Connect ThermalTrace",
+        "title": "Connect ProbeHarbor",
         "description": "Create a share link under Dashboard → Share (Pro) and paste the token from the URL (`/share/YOUR_TOKEN`). Optional fields enable inbound webhooks and push ingest from Home Assistant automations.",
         "data": {
-          "base_url": "ThermalTrace site URL",
+          "base_url": "ProbeHarbor site URL",
           "share_token": "Share link token",
           "scan_interval": "Poll interval (seconds)",
           "inbound_token": "Inbound webhook token (optional)",
@@ -14,9 +14,9 @@
         }
       },
       "init": {
-        "title": "Update ThermalTrace",
+        "title": "Update ProbeHarbor",
         "data": {
-          "base_url": "ThermalTrace site URL",
+          "base_url": "ProbeHarbor site URL",
           "share_token": "Share link token",
           "scan_interval": "Poll interval (seconds)",
           "inbound_token": "Inbound webhook token (optional)",
@@ -27,7 +27,7 @@
     },
     "error": {
       "invalid_share_token": "Share token is invalid or expired",
-      "cannot_connect": "Could not reach ThermalTrace — check the site URL and network"
+      "cannot_connect": "Could not reach ProbeHarbor — check the site URL and network"
     },
     "abort": {
       "already_configured": "This share link is already configured"

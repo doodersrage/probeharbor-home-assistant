@@ -1,4 +1,4 @@
-"""ThermalTrace sensors."""
+"""ProbeHarbor sensors."""
 
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ async def async_setup_entry(
 
 
 class ThermalTraceSensor(CoordinatorEntity[ThermalTraceCoordinator], SensorEntity):
-    """Sensor backed by a ThermalTrace share-link reading."""
+    """Sensor backed by a ProbeHarbor share-link reading."""
 
     _attr_has_entity_name = True
 
@@ -76,8 +76,8 @@ class ThermalTraceSensor(CoordinatorEntity[ThermalTraceCoordinator], SensorEntit
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id, device)},
             name=device,
-            manufacturer="ThermalTrace",
-            configuration_url=entry.data.get("base_url", "https://thermaltrace.dev"),
+            manufacturer="ProbeHarbor",
+            configuration_url=entry.data.get("base_url", "https://probeharbor.dev"),
         )
         self._attr_extra_state_attributes = {
             ATTR_DEVICE: device,
