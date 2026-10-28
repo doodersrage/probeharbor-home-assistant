@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from typing import Any
 
 from aiohttp import ClientError, ClientSession
 
 from .const import DEFAULT_BASE_URL
-from .signing import sign_body
+from .signing import sign_body, sign_timestamped
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -100,6 +101,11 @@ class ThermalTraceClient:
 
         raw = json.dumps(body, separators=(",", ":"))
         signature = sign_body(self.inbound_secret, raw)
+        # Timestamped (V2) signature: the server checks it when present and
+        # rejects requests more than 5 minutes old, so replays fail. The
+        # body-only header stays for servers that predate V2.
+        timestamp = str(int(time.time()))
+        signature_v2 = sign_timestamped(self.inbound_secret, raw, timestamp)
         url = f"{self.base_url}/api/inbound/{self.inbound_token}"
 
         try:
@@ -108,11 +114,18 @@ class ThermalTraceClient:
                 data=raw,
                 headers={
                     "Content-Type": "application/json",
+                    "X-ProbeHarbor-Timestamp": timestamp,
+                    "X-ProbeHarbor-Signature-V2": signature_v2,
                     "X-GarageTemp-Signature": signature,
                 },
                 timeout=30,
             ) as response:
                 if response.status == 401:
+                    text = await response.text()
+                    if "Stale timestamp" in text:
+                        raise ThermalTraceAuthError(
+                            "Inbound webhook rejected: Home Assistant's clock is more than 5 minutes off"
+                        )
                     raise ThermalTraceAuthError("Invalid inbound webhook or signature")
                 if response.status >= 400:
                     text = await response.text()

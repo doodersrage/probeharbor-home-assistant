@@ -39,7 +39,7 @@ Category: **Integration**
 
 ### Optional: inbound webhooks (Pro)
 
-Under **Dashboard → Share → Inbound webhooks**, create a webhook and copy the token and signing secret into the integration form. This enables snooze/vacation automations from HA.
+Under **Dashboard → Share → Inbound webhooks**, create a webhook and copy the token and signing secret into the integration form. This enables snooze/vacation automations from HA. Calls are signed with a timestamped HMAC (`X-ProbeHarbor-Signature-V2`), so Home Assistant's clock must be within 5 minutes of real time (NTP, which HA uses by default).
 
 ### Optional: push from HA
 
